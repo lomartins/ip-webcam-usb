@@ -13,7 +13,7 @@ sudo apt install v4l2loopback-utils v4l2loopback-dkms
 ```
 
 ## Note:
-You'll need Ip Webcam server star on your Android device and connect on USB. Then start the script.
+You'll need Ip Webcam server started on your Android device and connected on USB. Then start the script.
 
 If you're with multiple devices connected, you'll need to specify the device serial number.
 
