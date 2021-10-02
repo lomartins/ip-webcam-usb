@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from argparse import ArgumentParser
 import subprocess
 import os
@@ -17,10 +18,10 @@ class WebcamArgumentParser(ArgumentParser):
 class WebcamCommands:
     @staticmethod
     def start_connection(host_port, device_port, serial=None):
-        forward_cmd = f'adb forward tcp:{host_port} tcp:{device_port}'
-        if serial != None:
-            forward_cmd = forward_cmd.split()
-            forward_cmd = ' '.join(forward_cmd.insert(1, f'-s {serial}'))
+        if serial == None:
+            forward_cmd = f'adb forward tcp:{host_port} tcp:{device_port}'
+        else:
+            forward_cmd = f'adb -s {serial} forward tcp:{host_port} tcp:{device_port}'
 
         return subprocess.getstatusoutput(forward_cmd)
 
